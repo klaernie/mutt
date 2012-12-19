@@ -1,0 +1,8 @@
+text/html; elinks -dump -dump-color-mode 1 -dump-width ${COLUMNS:-80} -dump-charset UTF-8 -default-mime-type text/html %s 2>&1 ; needsterminal; copiousoutput;
+
+application/pdf; evince %s
+application/pdf; pdftotext %s -; copiousoutput
+
+application/x-pkcs7-signature;openssl pkcs7 -in %s -inform der -noout -print_certs -text | pager; needsterminal
+
+image/*; eog '%s' 
