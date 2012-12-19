@@ -1,0 +1,205 @@
+# colors
+color	normal		white		default
+color	attachment	brightyellow	default
+color	hdrdefault	cyan		default
+color	indicator	black		cyan
+color	markers		brightred	default
+color	quoted		green		default
+color	signature	cyan		default
+color	status		brightwhite	magenta
+color	tilde		blue		default
+color	tree		red		default
+
+# madcoder colors
+color	body		brightwhite	default		"(^|[\r\n\t ])_[a-zA-Z0-9][^_]*[a-zA-Z0-9]_[\r\n\t ]"
+color	body		brightwhite	default		"(^|[\r\n\t ])\\*[a-zA-Z0-9][^*]*[a-zA-Z0-9]\\*[\r\n\t ]"
+color	body		brightgreen	default		"(ftp|http|https|mailto|news)://[^ >)]+"
+
+#color	body		black		default		"foo-color0"
+color	body		color0		default		"foo-color0"
+#color	body		red		default		"foo-color1"
+color	body		color1		default		"foo-color1"
+#color	body		green		default		"foo-color2"
+color	body		color2		default		"foo-color2"
+#color	body		yellow		default		"foo-color3"
+color	body		color3		default		"foo-color3"
+#color	body		blue		default		"foo-color4"
+color	body		color4		default		"foo-color4"
+#color	body		magenta		default		"foo-color5"
+color	body		color5		default		"foo-color5"
+#color	body		cyan		default		"foo-color6"
+color	body		color6		default		"foo-color6"
+#color	body		white		default		"foo-color7"
+color	body		color7		default		"foo-color7"
+#color	body		brightblack	default		"foo-color8"
+color	body		color8		default		"foo-color8"
+#color	body		brightred	default		"foo-color9"
+color	body		color9		default		"foo-color9"
+#color	body		brightgreen	default		"foo-color10"
+color	body		color10		default		"foo-color10"
+#color	body		brightyellow	default		"foo-color11"
+color	body		color11		default		"foo-color11"
+#color	body		brightblue	default		"foo-color12"
+color	body		color12		default		"foo-color12"
+#color	body		brightmagenta	default		"foo-color13"
+color	body		color13		default		"foo-color13"
+#color	body		brightcyan	default		"foo-color14"
+color	body		color14		default		"foo-color14"
+#color	body		brightwhite	default		"foo-color15"
+color	body		color15		default		"foo-color15"
+
+color	hdrdefault	yellow		default
+color	header		red		default		"^(Subject|From|To|Cc|Date):"
+color	header		yellow		default		"^(X-Mailer|User-Agent|Message-Id|Sender|X-Org-Id):"
+
+color	indicator	white		magenta
+color	index		green		default		'~l ~p' # to me && and ML
+color	index		blue		default		'~P'	# from me
+
+color	index		brightwhite	default		'~N'
+color	index		brightwhite	default		'~O'
+color	index		brightred	default		'~D'
+color	index		brightwhite	yellow		'~F'
+color	index		red		default		'~T'
+
+# do colors first, as they will annoy
+
+### General Options
+
+set shell=/bin/bash
+set mbox_type=Maildir
+set maildir_trash=no
+set mask=""
+#set mask="!^\\.[^.]"
+set mark_old=no
+set check_mbox_size=yes
+set check_new=yes
+set mail_check=10
+set beep_new=yes
+set beep=yes
+set menu_scroll=yes
+set auto_tag=yes
+set xterm_set_titles=yes
+#set xterm_title="mutt:%h %f %?m?%m messages&no messages?%?n? [%n NEW]?"
+set xterm_icon="%f [%?m?%m&0?%?n?|%nN?]"
+set xterm_title="%f [%?m?%m&0?%?n?|%nN?]"
+set tilde
+set narrow_tree
+set markers=no
+unset wait_key
+
+### Folder Options
+
+set folder="~/Maildir"
+set mbox="~/Maildir"
+set record="+Sent"
+set postponed="+Drafts"
+set spoolfile="~/Maildir"
+set sort_browser=unsorted
+source "~/.mutt/muttrc.mboxes"
+#mailboxes `~/Maildir/mailboxes.sh`
+set folder_format="%3C %t %N %f"
+# cache a lot, saves time and hazzle 
+set header_cache="$HOME/.mutt/header_cache"
+set message_cachedir="$HOME/.mutt/message_cache"
+folder-hook . 'exec last-entry'
+
+subscribe `find $HOME/Maildir/Archiv/Mailinglisten -maxdepth 1 -mindepth 1 -type d | grep -v -e "/new" -e "/cur" -e "/tmp" | cut -d/ -f3`
+
+### Connection Options
+
+set imap_keepalive=300
+
+#get secrets
+source ~/.mutt/muttrc.secrets
+
+### Keybindings
+
+macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this message"
+
+
+macro generic,pager <F1> "<shell-escape> screen sh -c 'zcat /usr/share/doc/mutt/manual.txt.gz | sensible-pager'<enter>" "show Mutt documentation"
+
+macro browser <F4> ":source ~/.mutt/muttrc.aboxes<enter><toggle-mailboxes><toggle-mailboxes>" "show all mailboxes, regardless of state"
+macro browser <F5> ":source ~/.mutt/muttrc.mboxes<enter><toggle-mailboxes><toggle-mailboxes>" "show all mailboxes with unread mail"
+macro browser <F6> ":source ~/.mutt/muttrc.iboxes<enter><toggle-mailboxes><toggle-mailboxes>" "show all IMAP mailboxes"
+
+macro index <F5> "<sync-mailbox>:source ~/.mutt/muttrc.mboxes<enter><change-folder>?<toggle-mailboxes>" "reread mailboxes"
+
+macro index <F8> "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Maildir/search " "mu find"
+macro index <F9> "<change-folder>~/Maildir/search<enter>" \ "mu find results"
+bind pager \CH previous-line
+bind index <BackTab> next-unread-mailbox
+
+### Message Reading
+
+set sort_aux=last-date-received
+set implicit_autoview
+alternative_order text/plain text/html text
+mime_lookup application image
+
+
+### Message Composition
+
+# do no prompt for all fields, just call editor
+set fast_reply
+# as there is no prompt for the headers, lets edit them in the editor
+set edit_headers
+# for replies also attach a copy of the message refering to
+set include
+# vim is my editor. Text should be wrapped at 75chars and once the file is loaded jump to the 2nd
+# paragraph (which in turn is the start of the real message text.)
+#set editor="vim +'set textwidth=75' +'/^$'"
+set editor="muttedit"
+
+# Allow me to use short names for some people
+source ~/.mutt/muttrc.aliases
+set alias_file=~/.mutt/muttrc.aliases
+
+# Set the way mutt sends mails and thinks about my identity depending on in which mailbox I am.
+
+folder-hook . 'set smtp_url="" from="kandre@ak-online.be" record="+Sent" signature="~/.mutt/signature"'
+folder-hook imaps://kandre@community.cacert.org/ 'set smtp_url="smtps://kandre@community.cacert.org/" from="kandre@cacert.org" record="imaps://kandre@community.cacert.org/Sent/" signature="~/.mutt/signature.cacert"'
+folder-hook imaps://kandre@katja.hsh-online.com/ 'set smtp_url="smtps://kandre@katja.hsh-online.com/" from="andre.klaerner@hsh-online.com" record="imaps://kandre@katja.hsh-online.com/Sent Items/" signature="~/.mutt/signature.hsh"'
+
+# reply using the e-mail-address that received the message
+set reverse_name=yes
+# but don't keep the real name that the sender gave me
+set reverse_realname=no
+# and these are my mail-adresses
+alternates ^kandre@ak-online\.be$ ^kandre+.*@ak-online\.be$ ^root@ak-online\.be$ ^kandre@cacert\.org$ ^andre\.klaerner@hsh-online\.com$ ^kandre@hsh-online\.com$
+
+# If there is no reason to change it, use this email as default:
+set from="kandre@ak-online.be"
+
+# And forever and ever use this as my name
+set realname="Andre Klärner"
+
+# Signing and Encryption default keys:
+set smime_default_key="49731fb3.0"
+set smime_decrypt_use_default_key=yes
+
+# choose the right smime key depending on the From: address
+send-hook     .                          'set smime_default_key="49731fb3.0"'
+send-hook     "~f ^kandre@cacert\\.org$" 'set smime_default_key="9eec6762.0"'
+
+set pgp_sign_as="D74B35FD"
+
+### muttrc.SMIME. Most of this is anyway in /etc/Muttrc.d/smime.rc
+# the only options here are the ones, that are customized 
+
+set smime_is_default
+
+# Global crypto options -- these affect PGP operations as well.
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+set crypt_replysign = yes
+set crypt_replysignencrypted = yes
+set crypt_verify_sig = yes
+set pgp_auto_decode = no
+set crypt_autopgp = no
+

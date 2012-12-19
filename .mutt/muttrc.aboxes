@@ -1,0 +1,4 @@
+#this file will be sourced by every instance of rereading mailboxes
+
+unmailboxes *
+mailboxes `~/Maildir/mailboxes.sh all`
