@@ -110,7 +110,7 @@ subscribe `find $HOME/Maildir/Archiv/Mailinglisten -maxdepth 1 -mindepth 1 -type
 
 set imap_keepalive=300
 
-#get secrets
+#get secrets (sets just smtp_pass and imap_pass)
 source ~/.mutt/muttrc.secrets
 
 ### Keybindings
