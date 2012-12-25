@@ -27,7 +27,7 @@ then
 	do
 		echo -n "+\"$REPLY\" "
 	done < ~/Maildir/subscriptions
-	cat ~/.mutt/muttrc.imap-sources
+	cat ~/.mutt/muttrc.imap-sources | tr '\n' ' '
 else
 	echo -e "state1:\n\t$newMail" >> $LOGFILE
 	newMail=${newMail//"./cur"/" = "}
