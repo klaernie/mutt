@@ -1,0 +1,62 @@
+color	normal		white		default
+color	attachment	color15		default
+color	hdrdefault	cyan		default
+color	indicator	black		cyan
+color	markers		color9		default
+color	quoted		green		default
+color	signature	cyan		default
+color	status		color15		magenta
+color	tilde		blue		default
+color	tree		red		default
+
+# madcoder colors
+color	body		color15		default		"(^|[\r\n\t ])_[a-zA-Z0-9][^_]*[a-zA-Z0-9]_[\r\n\t ]"
+color	body		color15		default		"(^|[\r\n\t ])\\*[a-zA-Z0-9][^*]*[a-zA-Z0-9]\\*[\r\n\t ]"
+color	body		color10		default		"(ftp|http|https|mailto|news)://[^ >)]+"
+
+#color	body		black		default		"foo-color0"
+#color	body		color0		default		"foo-color0"
+#color	body		red		default		"foo-color1"
+#color	body		color1		default		"foo-color1"
+#color	body		green		default		"foo-color2"
+#color	body		color2		default		"foo-color2"
+#color	body		yellow		default		"foo-color3"
+#color	body		color3		default		"foo-color3"
+#color	body		blue		default		"foo-color4"
+#color	body		color4		default		"foo-color4"
+#color	body		magenta		default		"foo-color5"
+#color	body		color5		default		"foo-color5"
+#color	body		cyan		default		"foo-color6"
+#color	body		color6		default		"foo-color6"
+#color	body		white		default		"foo-color7"
+#color	body		color7		default		"foo-color7"
+#color	body		brightblack	default		"foo-color8"
+#color	body		color8		default		"foo-color8"
+#color	body		brightred	default		"foo-color9"
+#color	body		color9		default		"foo-color9"
+#color	body		brightgreen	default		"foo-color10"
+#color	body		color10		default		"foo-color10"
+#color	body		brightyellow	default		"foo-color11"
+#color	body		color11		default		"foo-color11"
+#color	body		brightblue	default		"foo-color12"
+#color	body		color12		default		"foo-color12"
+#color	body		brightmagenta	default		"foo-color13"
+#color	body		color13		default		"foo-color13"
+#color	body		brightcyan	default		"foo-color14"
+#color	body		color14		default		"foo-color14"
+#color	body		brightwhite	default		"foo-color15"
+#color	body		color15		default		"foo-color15"
+
+color	hdrdefault	yellow		default
+color	header		red		default		"^(Subject|From|To|Cc|Date):"
+color	header		yellow		default		"^(X-Mailer|User-Agent|Message-Id|Sender|X-Org-Id):"
+
+color	indicator	white		magenta
+color	index		green		default		'~l ~p' # to me && and ML
+color	index		blue		default		'~P'	# from me
+
+color	index		brightwhite	default		'~N | ~O'
+color	index		color9		default		'~D'
+color	index		color15		yellow		'~F'
+color	index		red		default		'~T'
+

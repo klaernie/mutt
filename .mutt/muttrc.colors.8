@@ -1,0 +1,29 @@
+color	normal		white		default
+color	attachment	brightyellow	default
+color	hdrdefault	cyan		default
+color	indicator	black		cyan
+color	markers		brightred	default
+color	quoted		green		default
+color	signature	cyan		default
+color	status		brightwhite	magenta
+color	tilde		blue		default
+color	tree		red		default
+
+# madcoder colors
+color	body		brightwhite	default		"(^|[\r\n\t ])_[a-zA-Z0-9][^_]*[a-zA-Z0-9]_[\r\n\t ]"
+color	body		brightwhite	default		"(^|[\r\n\t ])\\*[a-zA-Z0-9][^*]*[a-zA-Z0-9]\\*[\r\n\t ]"
+color	body		brightgreen	default		"(ftp|http|https|mailto|news)://[^ >)]+"
+
+color	hdrdefault	yellow		default
+color	header		red		default		"^(Subject|From|To|Cc|Date):"
+color	header		yellow		default		"^(X-Mailer|User-Agent|Message-Id|Sender|X-Org-Id):"
+
+color	indicator	white		magenta
+color	index		green		default		'~l ~p' # to me && and ML
+color	index		blue		default		'~P'	# from me
+
+color	index		brightwhite	default		'~N'
+color	index		brightwhite	default		'~O'
+color	index		brightred	default		'~D'
+color	index		brightwhite	yellow		'~F'
+color	index		red		default		'~T'
