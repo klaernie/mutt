@@ -1,4 +1,4 @@
 #this file will be sourced by every instance of rereading mailboxes
 
 unmailboxes *
-mailboxes `~/.mutt/mailboxes.sh`
+mailboxes `~/.mutt/mailboxes.pl.sh`
