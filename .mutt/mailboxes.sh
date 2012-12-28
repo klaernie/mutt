@@ -1,5 +1,6 @@
 #!/bin/bash
-LOGFILE="$HOME/Maildir/mailboxes.log"
+#LOGFILE="$HOME/Maildir/mailboxes.log"
+LOGFILE="/dev/null"
 
 # if this is set, we shouldn't run. e.g. for muttedit
 if [ -f /tmp/muttedit-inhibit ]
@@ -29,16 +30,16 @@ then
 	done < ~/Maildir/subscriptions
 	cat ~/.mutt/muttrc.imap-sources | tr '\n' ' '
 else
-	echo -e "state1:\n\t$newMail" >> $LOGFILE
+#	echo -e "state1:\n\t$newMail" >> $LOGFILE
 	newMail=${newMail//"./cur"/" = "}
-	echo -e "state2:\n\t$newMail" >> $LOGFILE
+#	echo -e "state2:\n\t$newMail" >> $LOGFILE
 	newMail=${newMail//"./new"/" = "}
-	echo -e "state3:\n\t$newMail" >> $LOGFILE
+#	echo -e "state3:\n\t$newMail" >> $LOGFILE
 	newMail=${newMail//"/new"}
-	echo -e "state4:\n\t$newMail" >> $LOGFILE
+#	echo -e "state4:\n\t$newMail" >> $LOGFILE
 	newMail=${newMail//"/cur"}
-	echo -e "state5:\n\t$newMail" >> $LOGFILE
+#	echo -e "state5:\n\t$newMail" >> $LOGFILE
 	newMail=${newMail//"./"/"="}
-	echo -e "final state:\n\t$newMail" >> $LOGFILE
+#	echo -e "final state:\n\t$newMail" >> $LOGFILE
 	echo -n $newMail
 fi
