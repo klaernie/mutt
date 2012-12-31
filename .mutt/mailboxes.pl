@@ -69,6 +69,8 @@ Getopt::Long::GetOptions ('all!' => \$all ) ;
 my @maildirs = ( $ENV{'HOME'}."/Maildir/" );
 push ( @maildirs, ScanDirectory($ENV{'HOME'}."/Maildir"));
 
+@maildirs = sort { lc($a) cmp lc($b) } @maildirs;
+
 my $outputGenerated = 0;
 
 while ( ! $outputGenerated ) {
