@@ -103,6 +103,7 @@ set alias_file=~/.mutt/muttrc.aliases
 # Set the way mutt sends mails and thinks about my identity depending on in which mailbox I am.
 
 folder-hook . 'set smtp_url="" from="kandre@ak-online.be" record="+Sent" signature="~/.mutt/signature"'
+folder-hook =Archiv/Mailinglisten/ 'set smtp_url="" from="kandre@ak-online.be" record="+Sent" signature="~/.mutt/signature.ML"'
 folder-hook imaps://kandre@community.cacert.org/ 'set smtp_url="smtps://kandre@community.cacert.org/" from="kandre@cacert.org" record="imaps://kandre@community.cacert.org/Sent/" signature="~/.mutt/signature.cacert"'
 folder-hook imaps://kandre@katja.hsh-online.com/ 'set smtp_url="smtps://kandre@katja.hsh-online.com/" from="andre.klaerner@hsh-online.com" record="imaps://kandre@katja.hsh-online.com/Sent Items/" signature="~/.mutt/signature.hsh"'
 
