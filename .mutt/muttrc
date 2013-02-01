@@ -26,6 +26,8 @@ set narrow_tree
 set markers=no
 unset wait_key
 
+set print_command="muttprint -P A4"
+
 ### Folder Options
 
 set folder="~/Maildir"
