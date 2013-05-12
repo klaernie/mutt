@@ -1,0 +1,9 @@
+#!/bin/bash
+case "$HOSTNAME" in
+	"mainframe")
+		echo ak
+		;;
+	"sapdeb2")
+		echo sap
+		;;
+esac

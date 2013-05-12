@@ -30,13 +30,13 @@ set print_command="muttprint -P A4"
 
 ### Folder Options
 
-set folder="~/Maildir"
-set mbox="~/Maildir"
-set record="+Sent"
-set postponed="+Drafts"
-set spoolfile="~/Maildir"
+set folder=`cat $HOME/.mutt/profile/$($HOME/.mutt/get-current-profile)/folder`
+set mbox=`cat $HOME/.mutt/profile/$($HOME/.mutt/get-current-profile)/mbox`
+set record=`cat $HOME/.mutt/profile/$($HOME/.mutt/get-current-profile)/record`
+set postponed=`cat $HOME/.mutt/profile/$($HOME/.mutt/get-current-profile)/postponed`
+set spoolfile=`cat $HOME/.mutt/profile/$($HOME/.mutt/get-current-profile)/spoolfile`
 set sort_browser=unsorted
-source "~/.mutt/muttrc.mboxes"
+source `cat $HOME/.mutt/profile/$($HOME/.mutt/get-current-profile)/starting-mailboxes`
 #mailboxes `~/Maildir/mailboxes.sh`
 set folder_format="%3C %t %N %f"
 # cache a lot, saves time and hazzle 
