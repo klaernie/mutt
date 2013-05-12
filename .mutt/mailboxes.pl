@@ -77,7 +77,7 @@ while ( ! $outputGenerated ) {
 	foreach my $maildir ( @maildirs ) {
 		if ( $all or newMail($maildir) ) {
 			$maildir =~ s/$ENV{'HOME'}\/Maildir\//=/;
-			print ($maildir, "\n") unless $maildir =~ m/^=INBOX$/;
+			print ("\"".$maildir."\"", "\n") unless $maildir =~ m/^=INBOX$/;
 			$outputGenerated = 1;
 		}
 	}
