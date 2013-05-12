@@ -52,11 +52,13 @@ color	header		red		default		"^(Subject|From|To|Cc|Date):"
 color	header		yellow		default		"^(X-Mailer|User-Agent|Message-Id|Sender|X-Org-Id):"
 
 color	indicator	white		magenta
-color	index		green		default		'~l ~p' # to me && and ML
-color	index		blue		default		'~P'	# from me
 
 color	index		brightwhite	default		'~N | ~O'
 color	index		color9		default		'~D'
 color	index		color15		yellow		'~F'
 color	index		red		default		'~T'
+
+color	index		green		default		'~l ~p' # to me && and ML
+color	index		blue		default		'~P'	# from me
+color	index		brightblue	default		'~P (~N | ~O)'	# my messages that are new or old
 
