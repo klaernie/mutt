@@ -26,6 +26,9 @@ set narrow_tree
 set markers=no
 unset wait_key
 
+set date_format="%a, %d %b %Y at %I:%M:%S %Z"
+set index_format="%4C  %Z  %-35.35D  %-32.32L  (%4c)  %s"
+
 set print_command="muttprint -P A4"
 
 ### Folder Options
