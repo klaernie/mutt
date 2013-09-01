@@ -14,7 +14,7 @@ sub ScanDirectory{
 	my @maildirs = ();
 
 	foreach my $name (@names){
-		next if ($name eq "."); 
+		next if ($name eq ".");
 		next if ($name eq "..");
 		next if ($name eq "new");
 		next if ($name eq "tmp");
