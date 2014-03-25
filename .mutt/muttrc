@@ -66,7 +66,7 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this message"
 
 
-macro generic,pager <F1> "<shell-escape> screen sh -c 'zcat /usr/share/doc/mutt/manual.txt.gz | sensible-pager'<enter>" "show Mutt documentation"
+macro generic,pager <F1> "<shell-escape> screen -t mutt-manual sh -c 'view /usr/share/doc/mutt/manual.txt.gz'<enter>" "show Mutt documentation"
 
 macro browser <F4> ":source ~/.mutt/muttrc.aboxes<enter><toggle-mailboxes><toggle-mailboxes>" "show all mailboxes, regardless of state"
 macro browser <F5> ":source ~/.mutt/muttrc.mboxes<enter><toggle-mailboxes><toggle-mailboxes>" "show all mailboxes with unread mail"
