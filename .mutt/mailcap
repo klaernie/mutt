@@ -7,6 +7,8 @@ application/x-pkcs7-signature;openssl pkcs7 -in %s -inform der -noout -print_cer
 
 application/x-gzip; vim -R %s; needsterminal
 
+application/x-shellscript; vim -R %s; needsterminal
+
 text/calendar; ~/.mutt/icalview.rb; copiousoutput
 
 image/*; eog '%s' 
