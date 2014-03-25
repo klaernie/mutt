@@ -138,7 +138,7 @@ set smime_decrypt_use_default_key=yes
 
 # choose the right smime key depending on the From: address
 send-hook     .                          'set smime_default_key="49731fb3.0"'
-send-hook     "~f ^kandre@cacert\\.org$" 'set smime_default_key="9eec6762.0"'
+send-hook     "~f ^kandre@cacert\\.org$" 'set smime_default_key="9eec6762.1"'
 
 set pgp_sign_as="D74B35FD"
 
