@@ -133,8 +133,8 @@ set from="kandre@ak-online.be"
 set realname="Andre Klärner"
 
 # Signing and Encryption default keys:
-set smime_default_key="49731fb3.0"
-set smime_decrypt_use_default_key=yes
+set smime_default_key="49731fb3.2"
+set smime_decrypt_use_default_key=no
 
 # choose the right smime key depending on the From: address
 send-hook     .                          'set smime_default_key="49731fb3.2"'
