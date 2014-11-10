@@ -27,7 +27,7 @@ set markers=no
 unset wait_key
 
 set date_format="%a %d.%m.%Y %H:%M:%S"
-set index_format="%4C  %Z  %-23.23D  %-32.32L  %s"
+set index_format="%4C %2N %Z  %-23.23D  %-32.32L  %s"
 
 set print_command="muttprint -P A4"
 
