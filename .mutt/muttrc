@@ -156,3 +156,8 @@ set crypt_verify_sig = yes
 set pgp_auto_decode = no
 set crypt_autopgp = no
 
+## Message Scoring
+set score_threshold_delete=0
+score "~A" +50
+score "~f fail2ban@.*ak-online.be ~d >2d" -50
+score '~s "BackupPC: no recent backups on edith.ak-online.be"' -45
