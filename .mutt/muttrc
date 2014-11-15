@@ -47,7 +47,7 @@ set header_cache="$HOME/.mutt/header_cache"
 set message_cachedir="$HOME/.mutt/message_cache"
 folder-hook . 'exec last-entry'
 
-subscribe `$HOME/.mutt/get_mailinglists.pl`
+subscribe `$HOME/.mutt/get_mailinglists.pl $($HOME/.mutt/get-current-profile)`
 
 ### Connection Options
 

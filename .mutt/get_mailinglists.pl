@@ -5,7 +5,7 @@ use strict;
 use Getopt::Long;
 
 sub ScanDirectory{
-	my ($searchdir) = shift; 
+	my ($searchdir) = shift;
 
 	opendir(DIR, "$searchdir") or die "Unable to open $searchdir:$!\n";
 	my @names = readdir(DIR) or die "Unable to read $searchdir:$!\n";
@@ -34,13 +34,15 @@ sub ScanDirectory{
 
 # begin sub main
 
-my @maildirs = ();
-push ( @maildirs, ScanDirectory($ENV{'HOME'}."/Maildir/Archiv/Mailinglisten"));
+if ( defined($ARGV[0]) && $ARGV[0] =~ /ak/ ) {
+	my @maildirs = ();
+	push ( @maildirs, ScanDirectory($ENV{'HOME'}."/Maildir/Archiv/Mailinglisten"));
 
-@maildirs = sort { lc($a) cmp lc($b) } @maildirs;
+	@maildirs = sort { lc($a) cmp lc($b) } @maildirs;
 
-foreach my $maildir ( @maildirs ) {
-	$maildir =~ s/$ENV{'HOME'}\/Maildir\/Archiv\/Mailinglisten\///;
-	$maildir =~ s/(.*)/\/$1\//;
-	print ("\"".$maildir."\"", "\n");
+	foreach my $maildir ( @maildirs ) {
+		$maildir =~ s/$ENV{'HOME'}\/Maildir\/Archiv\/Mailinglisten\///;
+		$maildir =~ s/(.*)/\/$1\//;
+		print ("\"".$maildir."\"", "\n");
+	}
 }
