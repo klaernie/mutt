@@ -6,4 +6,7 @@ case "$HOSTNAME" in
 	"sapdeb2")
 		echo sap
 		;;
+	"ls2621")
+		echo sap
+		;;
 esac
