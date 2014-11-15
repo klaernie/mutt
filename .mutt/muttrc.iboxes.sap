@@ -1,0 +1,2 @@
+unmailboxes *
+mailboxes `cat $HOME/.mutt/muttrc.imap-sources.sap | tr '\n' ' '`
