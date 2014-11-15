@@ -1,5 +1,5 @@
-text/html; elinks -dump -dump-width ${COLUMNS:-80} -dump-charset UTF-8 -default-mime-type text/html %s 2>&1 ; needsterminal; copiousoutput;
-
+text/html; elinks -dump -dump-width ${COLUMNS:-80} -dump-charset UTF-8 -default-mime-type text/html %s 2>&1 ; needsterminal; copiousoutput; test=test -x /usr/bin/elinks;
+text/html; lynx -force_html -dump %s 2>&1 ; needsterminal; copiousoutput; test=test -x /usr/bin/lynx;
 application/pdf; evince %s
 application/pdf; pdftotext %s -; copiousoutput
 
