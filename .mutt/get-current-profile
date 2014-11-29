@@ -1,6 +1,6 @@
 #!/bin/bash
 case "$HOSTNAME" in
-	"mainframe")
+	"debs"|"mainframe")
 		echo ak
 		;;
 	"sapdeb2")
