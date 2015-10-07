@@ -109,13 +109,11 @@ set alias_file=~/.mutt/muttrc.aliases
 folder-hook . 'set smtp_url="" from="kandre@ak-online.be" record="+Sent" signature="~/.mutt/signature"'
 folder-hook =Archiv/Mailinglisten/ 'set smtp_url="" from="kandre@ak-online.be" record="+Sent" signature="~/.mutt/signature.ML"'
 folder-hook imaps://kandre@community.cacert.org/ 'set smtp_url="smtps://kandre@community.cacert.org/" from="kandre@cacert.org" record="imaps://kandre@community.cacert.org/Sent/" signature="~/.mutt/signature.cacert"'
-folder-hook imaps://kandre@katja.hsh-online.com/ 'set smtp_url="smtp://kandre@katja.hsh-online.com/" from="andre.klaerner@hsh-online.com" record="imaps://kandre@katja.hsh-online.com/Sent Items/" signature="~/.mutt/signature.hsh"'
 folder-hook imaps://imap.global.corp.sap/ 'set smtp_url="smtp://mail.sap.corp/" from="andre.klaerner@sap.com" record="imaps://imap.global.corp.sap/Sent Items/" signature="~/.mutt/signature.sap" crypt_autosign=no'
 
 # set the correct smtp-server / sending method depending on the address
 send-hook "~f kandre@ak-online.be" 'set smtp_url="" from="kandre@ak-online.be" record="+Sent"'
 send-hook "~f kandre@cacert.org"   'set smtp_url="smtps://kandre@community.cacert.org/" record="imaps://kandre@community.cacert.org/Sent/"'
-send-hook "~f andre.klaerner@hsh-online.com"     'set smtp_url="smtp://kandre@katja.hsh-online.com/" record="imaps://kandre@katja.hsh-online.com/Sent Items/" '
 send-hook "~f andre.klaerner@sap.com" 'set smtp_url="smtp://mail.sap.corp/" record="imaps://imap.global.corp.sap/Sent Items/" crypt_autosign=no'
 
 
@@ -124,7 +122,7 @@ set reverse_name=yes
 # but don't keep the real name that the sender gave me
 set reverse_realname=no
 # and these are my mail-adresses
-alternates ^kandre@ak-online\.be$ ^kandre\+.*@ak-online\.be$ ^andre\.klaerner\+*.*@$ ^root@.*ak-online\.be$ ^kandre@cacert\.org$ ^andre\.klaerner@hsh-online\.com$ ^kandre@hsh-online\.com$ ^andre.klaerner@sap.com$ ^andre.klaerner+.*@sap.com$
+alternates ^kandre@ak-online\.be$ ^kandre\+.*@ak-online\.be$ ^andre\.klaerner\+*.*@$ ^root@.*ak-online\.be$ ^kandre@cacert\.org$ ^andre.klaerner@sap.com$ ^andre.klaerner+.*@sap.com$
 
 # If there is no reason to change it, use this email as default:
 set from="kandre@ak-online.be"
