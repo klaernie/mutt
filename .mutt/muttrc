@@ -81,6 +81,7 @@ bind index <BackTab> next-unread-mailbox
 
 ### Message Reading
 
+set sort=threads
 set sort_aux=last-date-received
 set implicit_autoview
 alternative_order text/calendar text/plain text/html text
